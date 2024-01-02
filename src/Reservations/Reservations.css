@@ -8,11 +8,10 @@
     flex-wrap: wrap;
 }
 
-.reservation-card {
+section {
     border: solid;
     border-width: 3px;
     color: teal;
-    width: 15%;
     background-color: white;
     padding: 8px;
 }

@@ -4,7 +4,7 @@ function Reservations({ reservations }) {
     function showReservations() {
         return reservations.map(reservation => {
             return (
-                <section className='reservation-card'>
+                <section className={`reservation-card-${reservation.id}`}>
                     <h1>{reservation.name}</h1>
                     <p>{reservation.date}</p>
                     <p>{reservation.time}</p>
