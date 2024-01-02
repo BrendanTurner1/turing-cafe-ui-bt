@@ -3,11 +3,23 @@
 
 .reservation-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .reservation-card {
+    border: solid;
+    border-width: 3px;
+    color: teal;
+    width: 15%;
     background-color: white;
+    padding: 8px;
+}
+
+button {
+    background-color: teal;
+    color: white;
+    border: none;
+    width: 70%;
 }
