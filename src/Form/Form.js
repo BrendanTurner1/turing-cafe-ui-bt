@@ -5,28 +5,41 @@ function Form( {addReservations} ){
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [guests, setGuests] = useState();
+  const [guests, setGuests] = useState("");
 
   function submitReservation(event) {
-    event.preventDefaul()
-    const newReservation = {
-        id: Date.now(),
-        name,
-        date,
-        time,
-        guests
+    event.preventDefault()
+    const number = parseInt(guests)
+    if(name && date && time && number){
+        const newReservation = {
+            id: Date.now(),
+            name,
+            date,
+            time,
+            number
+        }
+        addReservations(newReservation)
+        clearInput()
     }
-    addReservations(newReservation)
-    clearInput()
+    else{
+        if(number){
+            alert('Invalid Submission')
+        }
+        else{
+            alert('Give a valid Number of Guests')
+        }
+        
+    }
+    
   }
 
   function clearInput() {
     setName('');
     setDate('');
     setTime('');
-    setGuests();
+    setGuests('');
   }
-  
+
     return (
       <form>
         <input
@@ -55,7 +68,7 @@ function Form( {addReservations} ){
         />
 
         <input
-          type='number'
+          type='text'
           placeholder='Number of Guests'
           name='guests'
           value={guests}
